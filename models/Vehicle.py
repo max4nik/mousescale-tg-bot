@@ -35,7 +35,17 @@ class Vehicle:
         return sum([machine.calc_mass() for machine in self.machines])
 
     def add_truck(self, truck_dict):
-        new_truck = Truck(truck_dict["name"], truck_dict["number"], truck_dict["calibration"])
+        """
+        Function to add a truck to machine
+        :param truck_dict: a dictionary contating fields:
+        name: str
+        number: str
+        calibration: a dictionary, now should be just nothing in it
+        info: just additional dictionaru for some fields, now can be nothing in it
+        >>> Vehicle().add_truck({"name": "Ringo Star", "number": "(BG) AA2322XT", "calibration": dict(), "info": dict()})
+        :return:
+        """
+        new_truck = Truck(truck_dict["name"], truck_dict["number"], truck_dict["calibration"], truck_dict["info"])
         self.add_machine(new_truck)
 
 
